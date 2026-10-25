@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<!-- DOCTYPE: le dice al navegador que este documento es HTML5 -->
+<html lang="es">
+<!-- html: la etiqueta raiz; lang="es" indica que el contenido esta en espanol -->
+<head>
+    <!-- head: informacion SOBRE la pagina (no se ve en la ventana de contenido) -->
+    <meta charset="UTF-8">
+    <!-- charset UTF-8: permite tildes, enie y simbolos especiales -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- viewport: la pagina se adapta de forma fluida a pantallas de celular y computadores -->
+    <title>Registrar un equipo · Ahorra energía en casa</title>
+    <!-- title: el texto que aparece en la pestana del navegador -->
+    <!-- Bootstrap 5.3.3: hoja de estilos cargada desde CDN oficial -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+</head>
+<body class="container py-3">
+    <!-- header: el ENCABEZADO de la pagina -->
+    <header class="p-4 mb-4 bg-primary text-white rounded shadow-sm">
+        <h1 class="h2 mb-2">Registrar un equipo</h1>
+        <p class="lead mb-3">Formulario para ingresar las características técnicas de un electrodoméstico del hogar y registrar sus horas de uso diario.</p>
+        
+        <!-- nav: el MENU de navegacion entre las cinco paginas del sitio -->
+        <nav class="nav nav-pills flex-wrap gap-1" aria-label="Navegación principal">
+            <a class="nav-link text-white" href="index.html">Inicio</a>
+            <a class="nav-link text-white" href="equipos.html">Equipos de mi casa</a>
+            <a class="nav-link text-white" href="mi-factura.html">Mi factura</a>
+            <a class="nav-link active bg-white text-primary fw-bold" aria-current="page" href="registro.html">Registrar un equipo</a>
+            <a class="nav-link text-white" href="encuesta.html">Encuesta de consumo</a>
+        </nav>
+    </header>
+
+    <!-- main: el CONTENIDO PRINCIPAL; solo hay uno por pagina -->
+    <main>
+        <section class="card border-0 shadow-sm p-4 bg-light">
+            <h2 class="h4 text-primary border-bottom pb-2 mb-3">Formulario de registro de equipo</h2>
+            <p class="text-muted small">
+                Complete los siguientes campos para agregar un nuevo electrodoméstico a su inventario personal. Al enviar el formulario con el método <code>GET</code>, podrá ver los parámetros enviados directamente en la barra de direcciones (URL) de su navegador.
+            </p>
+
+            <!-- alert: componente Bootstrap para mostrar un aviso informativo destacado -->
+            <div class="alert alert-info d-flex align-items-center gap-2 small" role="alert">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-info-circle-fill flex-shrink-0" viewBox="0 0 16 16" aria-hidden="true"><path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16m.93-9.412-1 4.705c-.07.34.029.533.304.533.194 0 .487-.07.686-.246l-.088.416c-.287.346-.92.598-1.465.598-.703 0-1.002-.422-.808-1.319l.738-3.468c.064-.293.006-.399-.287-.47l-.451-.081.082-.381 2.29-.287zM8 5.5a1 1 0 1 1 0-2 1 1 0 0 1 0 2"/></svg>
+                <div>Al enviar el formulario con <strong>método GET</strong>, todos los valores aparecerán en la URL del navegador (por ejemplo: <code>registro.html?nombre_equipo=Nevera&amp;potencia_w=171</code>). Los campos marcados con <span class="badge bg-danger">Obligatorio</span> deben llenarse antes de enviar.</div>
+            </div>
+            <!-- Al trabajar como sitio estatico, lo enviamos a esta misma pagina con GET -->
+            <form action="registro.html" method="get">
+
+                <!-- fieldset: agrupa semánticamente campos relacionados; legend es su titulo descriptivo -->
+                <fieldset class="border rounded p-3 mb-4 bg-white">
+                    <legend class="float-none w-auto px-2 fs-6 fw-bold text-primary">1. Datos técnicos del equipo</legend>
+
+                    <!-- label for="nombre" se conecta con el input id="nombre" -->
+                    <div class="mb-3">
+                        <label for="nombre" class="form-label fw-semibold">Nombre o modelo del equipo:</label>
+                        <!-- type="text": campo de texto; required: obligatorio; placeholder: texto guía -->
+                        <input class="form-control" type="text" id="nombre" name="nombre" required placeholder="Ej.: Nevera Haceb No Frost 271L">
+                    </div>
+
+                    <div class="row g-3 mb-3">
+                        <div class="col-md-6">
+                            <label for="potencia" class="form-label fw-semibold">Potencia nominal o promedio (W):</label>
+                            <!-- type="number" con min y max: validación automática nativa del navegador -->
+                            <input class="form-control" type="number" id="potencia" name="potencia" min="1" max="10000" required placeholder="Ej.: 120">
+                            <div class="form-text">Revise la placa de características técnicas del fabricante (en vatios).</div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <label for="horas" class="form-label fw-semibold">Horas promedio de uso al día:</label>
+                            <!-- step="0.5" permite ingresar fracciones de hora como 0.5 h (30 minutos) -->
+                            <input class="form-control" type="number" id="horas" name="horas" min="0" max="24" step="0.5" required placeholder="Ej.: 6">
+                            <div class="form-text">Si está encendido todo el tiempo (como la nevera), escriba 24.</div>
+                        </div>
+                    </div>
+
+                    <div class="mb-2">
+                        <label for="tipo" class="form-label fw-semibold">Tipo o categoría de equipo:</label>
+                        <!-- select: lista DESPLEGABLE de opciones mutuamente excluyentes -->
+                        <select class="form-select" id="tipo" name="tipo" required>
+                            <option value="" disabled selected>Seleccione una categoría...</option>
+                            <option value="calor">Generador de calor (ducha eléctrica, plancha, estufa, tostadora)</option>
+                            <option value="frio">Refrigeración o climatización (nevera, congelador, aire acondicionado)</option>
+                            <option value="electronico">Electrónico y entretenimiento (televisor, computador, consola de video)</option>
+                            <option value="motor">Equipos con motor o bombeo (lavadora, licuadora, bomba hidráulica)</option>
+                            <option value="iluminacion">Iluminación (bombillos LED, fluorescentes o incandescentes)</option>
+                        </select>
+                    </div>
+                </fieldset>
+
+                <!-- Segundo fieldset: patrones de uso y hábitos -->
+                <fieldset class="border rounded p-3 mb-4 bg-white">
+                    <legend class="float-none w-auto px-2 fs-6 fw-bold text-primary">2. Hábitos de uso y observaciones</legend>
+                    
+                    <p class="fw-semibold mb-2">Momento habitual de mayor uso:</p>
+                    <!-- radio: permite elegir SOLO UNA opción de un mismo grupo (mismo atributo name) -->
+                    <div class="form-check mb-1">
+                        <input class="form-check-input" type="radio" id="dia" name="momento" value="dia" checked>
+                        <label class="form-check-label" for="dia">Diurno (mañana o tarde)</label>
+                    </div>
+                    <div class="form-check mb-3">
+                        <input class="form-check-input" type="radio" id="noche" name="momento" value="noche">
+                        <label class="form-check-label" for="noche">Nocturno (6:00 p. m. a 9:00 p. m. · período de mayor demanda nacional)</label>
+                    </div>
+
+                    <!-- checkbox: casilla de verificación booleana -->
+                    <div class="form-check mb-3">
+                        <input class="form-check-input" type="checkbox" id="desconecta" name="desconecta" value="si">
+                        <label class="form-check-label" for="desconecta">
+                            Lo desconecto completamente de la toma de corriente cuando no está en funcionamiento.
+                        </label>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="fecha" class="form-label fw-semibold">Fecha de registro o verificación:</label>
+                        <!-- type="date": el navegador despliega un calendario accesible nativo -->
+                        <input class="form-control" type="date" id="fecha" name="fecha">
+                    </div>
+
+                    <div class="mb-2">
+                        <label for="notas" class="form-label fw-semibold">Observaciones técnicas adicionales:</label>
+                        <!-- textarea: campo de texto multilinea para descripciones amplias -->
+                        <textarea class="form-control" id="notas" name="notas" rows="3" placeholder="Ej.: El equipo cuenta con sello RETIQ categoría A; el cable de alimentación se encuentra en buen estado."></textarea>
+                    </div>
+                </fieldset>
+
+                <!-- Botones de accion para enviar o limpiar el formulario -->
+                <div class="d-flex gap-2">
+                    <!-- button type="submit": dispara el evento de envío y validación de campos -->
+                    <button class="btn btn-primary px-4" type="submit">Registrar equipo</button>
+                    <!-- button type="reset": restablece todos los controles a sus valores predeterminados -->
+                    <button class="btn btn-outline-secondary" type="reset">Limpiar formulario</button>
+                </div>
+            </form>
+        </section>
+    </main>
+
+    <!-- footer: pie de pagina con creditos academicos -->
+    <footer class="mt-4 pt-3 border-top text-muted small">
+        <p class="mb-0">Actividad EA1 · Ingeniería Web I · Institución Universitaria Digital de Antioquia (IU Digital) · 2026-2</p>
+    </footer>
+    <!-- Bootstrap 5.3.3 JS Bundle: necesario para componentes interactivos -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

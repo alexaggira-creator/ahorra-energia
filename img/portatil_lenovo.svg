@@ -1,0 +1,77 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" width="100%" height="100%">
+  <defs>
+    <linearGradient id="laptopScreen" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0f172a" />
+      <stop offset="100%" stop-color="#1e293b" />
+    </linearGradient>
+    <linearGradient id="laptopBody" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1e293b" />
+      <stop offset="100%" stop-color="#0f172a" />
+    </linearGradient>
+  </defs>
+
+  <!-- Fondo -->
+  <rect x="0" y="0" width="400" height="300" fill="#f8fafc" rx="12" />
+
+  <!-- Portátil Lenovo ThinkPad L460 -->
+  <g transform="translate(85, 35)">
+    <!-- Pantalla abierta -->
+    <rect x="25" y="10" width="180" height="115" rx="6" fill="#0f172a" stroke="#334155" stroke-width="2" />
+    <!-- Display -->
+    <rect x="33" y="18" width="164" height="99" rx="3" fill="url(#laptopScreen)" />
+    <!-- Cámara web y LED -->
+    <circle cx="115" cy="14" r="1.5" fill="#475569" />
+    <circle cx="120" cy="14" r="0.8" fill="#22c55e" />
+
+    <!-- Contenido en pantalla -->
+    <text x="42" y="38" font-family="'Courier New', monospace" font-size="7.5" fill="#38bdf8">&lt;!DOCTYPE html&gt;</text>
+    <text x="42" y="50" font-family="'Courier New', monospace" font-size="7.5" fill="#a855f7">&lt;main class="container"&gt;</text>
+    <text x="52" y="62" font-family="'Courier New', monospace" font-size="7.5" fill="#22c55e">&lt;h1&gt;Ahorra Energía&lt;/h1&gt;</text>
+    <text x="42" y="74" font-family="'Courier New', monospace" font-size="7.5" fill="#a855f7">&lt;/main&gt;</text>
+    <text x="42" y="96" font-family="Arial, sans-serif" font-size="7" fill="#94a3b8">ThinkPad L460 · Lenovo PSREF</text>
+
+    <!-- Bisagra central -->
+    <rect x="85" y="125" width="60" height="6" fill="#0f172a" rx="2" />
+
+    <!-- Base / Teclado en perspectiva -->
+    <polygon points="10,130 220,130 240,205 -10,205" fill="url(#laptopBody)" stroke="#334155" stroke-width="2" />
+
+    <!-- Área de teclado -->
+    <polygon points="20,135 210,135 224,180 6,180" fill="#090d16" rx="2" />
+    <!-- Teclas simuladas con líneas -->
+    <line x1="26" y1="145" x2="204" y2="145" stroke="#334155" stroke-width="2" stroke-dasharray="8,2" />
+    <line x1="22" y1="155" x2="208" y2="155" stroke="#334155" stroke-width="2" stroke-dasharray="9,2" />
+    <line x1="18" y1="165" x2="212" y2="165" stroke="#334155" stroke-width="2" stroke-dasharray="10,2" />
+
+    <!-- TrackPoint rojo icónico de ThinkPad -->
+    <circle cx="115" cy="155" r="3" fill="#ef4444" />
+
+    <!-- Touchpad con botones TrackPoint -->
+    <polygon points="85,183 145,183 148,202 82,202" fill="#1e293b" stroke="#334155" stroke-width="1" />
+    <line x1="115" y1="183" x2="115" y2="189" stroke="#ef4444" stroke-width="1.5" />
+
+    <!-- Logo ThinkPad en la esquina del reposamuñecas -->
+    <text x="210" y="198" font-family="Arial, sans-serif" font-size="6" font-weight="bold" fill="#ffffff" text-anchor="end">ThinkPad</text>
+    <circle cx="212" cy="194" r="1" fill="#ef4444" />
+  </g>
+
+  <!-- Ficha informativa Izquierda: Adaptador PSREF -->
+  <rect x="12" y="25" width="105" height="75" rx="6" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5" />
+  <text x="64" y="42" font-family="Arial, sans-serif" font-size="8.5" font-weight="bold" fill="#0f172a" text-anchor="middle">Lenovo PSREF</text>
+  <text x="64" y="58" font-family="Arial, sans-serif" font-size="8" fill="#d97706" text-anchor="middle" font-weight="bold">Adaptador: 45W o 65W</text>
+  <text x="64" y="72" font-family="Arial, sans-serif" font-size="7" fill="#64748b" text-anchor="middle">Consumo real: ~25 W</text>
+  <text x="64" y="85" font-family="Arial, sans-serif" font-size="6.5" fill="#0284c7" text-anchor="middle">(Cota calculada a 65W)</text>
+
+  <!-- Ficha informativa Derecha: Horario y calculo -->
+  <rect x="283" y="25" width="105" height="75" rx="6" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5" />
+  <text x="335" y="42" font-family="Arial, sans-serif" font-size="8.5" font-weight="bold" fill="#0f172a" text-anchor="middle">Uso Semanal</text>
+  <text x="335" y="58" font-family="Arial, sans-serif" font-size="7.5" fill="#334155" text-anchor="middle">Lun-Vie 6h | Fin 7h</text>
+  <text x="335" y="72" font-family="Arial, sans-serif" font-size="7.5" fill="#334155" text-anchor="middle">Total: 44 horas</text>
+  <text x="335" y="86" font-family="Arial, sans-serif" font-size="7.5" fill="#16a34a" text-anchor="middle" font-weight="bold">2,86 kWh (a 65W)</text>
+
+  <!-- Pie de ilustración -->
+  <rect x="15" y="260" width="370" height="26" rx="4" fill="#e2e8f0" />
+  <text x="200" y="277" font-family="Arial, sans-serif" font-size="9" fill="#334155" text-anchor="middle">
+    Ilustración técnica referencial · Lenovo ThinkPad L460 (PSREF 45W / 65W)
+  </text>
+</svg>

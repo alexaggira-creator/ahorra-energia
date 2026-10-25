@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" width="100%" height="100%">
+  <defs>
+    <linearGradient id="fridgeBody" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#e2e8f0" />
+      <stop offset="100%" stop-color="#94a3b8" />
+    </linearGradient>
+    <linearGradient id="fridgeDoor" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#f8fafc" />
+      <stop offset="70%" stop-color="#cbd5e1" />
+      <stop offset="100%" stop-color="#94a3b8" />
+    </linearGradient>
+    <linearGradient id="accentBadge" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0284c7" />
+      <stop offset="100%" stop-color="#0369a1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Fondo con sombra sutil -->
+  <rect x="0" y="0" width="400" height="300" fill="#f1f5f9" rx="12" />
+  
+  <!-- Silueta de la Nevera -->
+  <g transform="translate(140, 20)">
+    <!-- Base / Patas -->
+    <rect x="15" y="245" width="20" height="10" fill="#334155" rx="2" />
+    <rect x="85" y="245" width="20" height="10" fill="#334155" rx="2" />
+    
+    <!-- Gabinete general -->
+    <rect x="5" y="5" width="110" height="240" fill="url(#fridgeBody)" rx="8" stroke="#64748b" stroke-width="2" />
+    
+    <!-- Puerta congelador superior -->
+    <rect x="8" y="8" width="104" height="75" fill="url(#fridgeDoor)" rx="4" stroke="#64748b" stroke-width="1.5" />
+    <!-- Manija congelador -->
+    <rect x="14" y="55" width="6" height="20" fill="#475569" rx="2" />
+    
+    <!-- Separador -->
+    <line x1="8" y1="88" x2="112" y2="88" stroke="#475569" stroke-width="2" />
+    
+    <!-- Puerta refrigerador inferior -->
+    <rect x="8" y="92" width="104" height="150" fill="url(#fridgeDoor)" rx="4" stroke="#64748b" stroke-width="1.5" />
+    <!-- Manija refrigerador -->
+    <rect x="14" y="102" width="6" height="35" fill="#475569" rx="2" />
+    
+    <!-- Logotipo y tecnología -->
+    <text x="60" y="32" font-family="Arial, sans-serif" font-size="9" font-weight="bold" fill="#1e293b" text-anchor="middle">HACEB</text>
+    <rect x="35" y="40" width="50" height="14" rx="3" fill="url(#accentBadge)" />
+    <text x="60" y="50" font-family="Arial, sans-serif" font-size="7" font-weight="bold" fill="#ffffff" text-anchor="middle">NO FROST</text>
+    <text x="60" y="145" font-family="Arial, sans-serif" font-size="7.5" fill="#475569" text-anchor="middle">271 LITROS</text>
+    <text x="60" y="160" font-family="Arial, sans-serif" font-size="7" font-weight="bold" fill="#0284c7" text-anchor="middle">INVERTER</text>
+  </g>
+
+  <!-- Ficha informativa Izquierda: Ficha oficial de producto -->
+  <rect x="12" y="25" width="115" height="75" rx="6" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5" />
+  <text x="69" y="42" font-family="Arial, sans-serif" font-size="8.5" font-weight="bold" fill="#0f172a" text-anchor="middle">Ficha Oficial Haceb</text>
+  <text x="69" y="58" font-family="Arial, sans-serif" font-size="8" fill="#166534" text-anchor="middle" font-weight="bold">Consumo: 23,7 kWh/mes</text>
+  <text x="69" y="72" font-family="Arial, sans-serif" font-size="7.5" fill="#334155" text-anchor="middle">Certificación RETIQ</text>
+  <text x="69" y="85" font-family="Arial, sans-serif" font-size="7" fill="#64748b" text-anchor="middle">Compresor Inverter</text>
+
+  <!-- Ficha informativa Derecha: Calculo semanal -->
+  <rect x="270" y="25" width="115" height="75" rx="6" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5" />
+  <text x="327" y="42" font-family="Arial, sans-serif" font-size="8.5" font-weight="bold" fill="#0f172a" text-anchor="middle">Uso Semanal</text>
+  <text x="327" y="58" font-family="Arial, sans-serif" font-size="8" fill="#0284c7" text-anchor="middle">24 h / día (168 h/sem)</text>
+  <text x="327" y="72" font-family="Arial, sans-serif" font-size="7.5" fill="#334155" text-anchor="middle">Prorrateo 7/30 días</text>
+  <text x="327" y="85" font-family="Arial, sans-serif" font-size="7.5" fill="#16a34a" text-anchor="middle" font-weight="bold">5,53 kWh / sem</text>
+
+  <!-- Banner inferior explicativo -->
+  <rect x="15" y="260" width="370" height="26" rx="4" fill="#e2e8f0" />
+  <text x="200" y="277" font-family="Arial, sans-serif" font-size="9" fill="#334155" text-anchor="middle">
+    Ilustración técnica referencial · Ficha Haceb: 23,7 kWh/mes (9003543)
+  </text>
+</svg>

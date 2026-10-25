@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<!-- DOCTYPE: le dice al navegador que este documento es HTML5 -->
+<html lang="es">
+<!-- html: la etiqueta raiz; lang="es" indica que el contenido esta en espanol -->
+<head>
+    <!-- head: metadatos tecnicos de la pagina -->
+    <meta charset="UTF-8">
+    <!-- charset UTF-8: soporte para caracteres especiales, tildes y enie -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- viewport: adaptabilidad en dispositivos moviles y pantallas de escritorio -->
+    <title>Equipos de mi casa · Ahorra energía en casa</title>
+    <!-- title: texto visible en la pestana del navegador -->
+    <!-- Bootstrap 5.3.3: estilos responsivos desde CDN oficial -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+</head>
+<body class="container py-3">
+    <!-- header: encabezado y menu de navegacion del sitio -->
+    <header class="p-4 mb-4 bg-primary text-white rounded shadow-sm">
+        <h1 class="h2 mb-2">Equipos de mi casa</h1>
+        <p class="lead mb-3">Inventario detallado de electrodomésticos, horas de uso y cálculo del consumo semanal con tarifa real de <strong>$960,34 COP por kWh</strong>.</p>
+        
+        <!-- nav: menu de navegacion semantico hacia las 5 paginas -->
+        <nav class="nav nav-pills flex-wrap gap-1" aria-label="Navegación principal">
+            <a class="nav-link text-white" href="index.html">Inicio</a>
+            <a class="nav-link active bg-white text-primary fw-bold" aria-current="page" href="equipos.html">Equipos de mi casa</a>
+            <a class="nav-link text-white" href="mi-factura.html">Mi factura</a>
+            <a class="nav-link text-white" href="registro.html">Registrar un equipo</a>
+            <a class="nav-link text-white" href="encuesta.html">Encuesta de consumo</a>
+        </nav>
+    </header>
+
+    <!-- main: contenido principal de la pagina de equipos -->
+    <main>
+        <!-- section: explicacion metodologica rigurosa requerida: no mezclar metodologias -->
+        <section class="card border-0 bg-light p-3 mb-4 shadow-sm">
+            <h2 class="h4 text-primary">Metodología y rigor en la estimación energética</h2>
+            <p>
+                Para evitar distorsiones técnicas, es imprescindible diferenciar dos métodos de estimación y no mezclar consumos certificados de laboratorio con cálculos teóricos de potencia nominal por horas como si fueran el mismo procedimiento:
+            </p>
+            <div class="row g-3 small">
+                <div class="col-md-6">
+                    <div class="p-3 bg-white rounded border h-100">
+                        <h3 class="h6 text-success fw-bold">Método 1: Consumo normativo certificado por el fabricante</h3>
+                        <p class="mb-1">
+                            Aplica a equipos con ciclos variables y compresores/motores modulantes (como la nevera y la lavadora). Los fabricantes certifican su consumo anual o mensual mediante pruebas estandarizadas de laboratorio (etiquetado <strong>RETIQ</strong>):
+                        </p>
+                        <ul class="mb-0">
+                            <li><strong>Nevera Haceb 271L:</strong> Ficha oficial certifica <code>23,7 kWh/mes</code>. Prorrateo semanal: <code>23,7 × (7/30) = 5,53 kWh/sem</code>.</li>
+                            <li><strong>Lavadora Samsung 19 kg:</strong> Ficha oficial certifica <code>144 kWh/año</code>. Prorrateo semanal: <code>144 ÷ 52 = 2,77 kWh/sem</code>.</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="p-3 bg-white rounded border h-100">
+                        <h3 class="h6 text-primary fw-bold">Método 2: Potencia nominal de operación × Horas de uso</h3>
+                        <p class="mb-1">
+                            Aplica cuando la documentación técnica solo especifica la potencia eléctrica en vatios (W) o la capacidad del adaptador:
+                        </p>
+                        <ul class="mb-0">
+                            <li><strong>Televisor LG QNED 55":</strong> Ficha técnica documenta <code>110 W</code> de potencia de operación.</li>
+                            <li><strong>Portátil Lenovo ThinkPad L460:</strong> Ficha PSREF documenta adaptador de <code>45 W</code> o <code>65 W</code>.</li>
+                            <li>Fórmula: <code>Consumo (kWh) = [Potencia (W) × Horas de uso] / 1.000</code>.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- section: tabla de consumo de los equipos con thead, tbody, tfoot, rowspan y colspan -->
+        <section class="mb-5">
+            <h2 class="h3 text-primary border-bottom pb-2 mb-3">Tabla de consumo semanal por equipo</h2>
+            <div class="table-responsive">
+                <!-- table table-striped table-bordered: diseno de tabla Bootstrap con celdas alternas y bordes definidos -->
+                <table class="table table-striped table-bordered table-hover align-middle caption-top">
+                    <caption class="fw-bold text-dark">
+                        Tabla 2: Registro de los 4 equipos del hogar, régimen de uso semanal, método de estimación y costo asociado a $960,34 COP/kWh
+                    </caption>
+                    
+                    <!-- thead: fila de encabezados que utiliza rowspan y colspan para estructurar las horas de uso -->
+                    <thead class="table-primary text-center">
+                        <tr>
+                            <!-- rowspan="2": la celda abarca 2 filas de alto -->
+                            <th scope="col" rowspan="2">Equipo y modelo</th>
+                            <th scope="col" rowspan="2">Dato técnico oficial documentado</th>
+                            <th scope="col" rowspan="2">Base metodológica de cálculo</th>
+                            <!-- colspan="2": la celda abarca 2 columnas de ancho -->
+                            <th scope="colgroup" colspan="2">Horas de uso diarias</th>
+                            <th scope="col" rowspan="2">Total horas / semana</th>
+                            <th scope="col" rowspan="2">Consumo semanal (kWh)</th>
+                            <th scope="col" rowspan="2">Costo semanal (COP)</th>
+                        </tr>
+                        <tr>
+                            <!-- Subencabezados para los dias de la semana -->
+                            <th scope="col">Lunes a viernes</th>
+                            <th scope="col">Sábado y domingo</th>
+                        </tr>
+                    </thead>
+                    
+                    <!-- tbody: cuerpo de la tabla con los datos reales de cada equipo -->
+                    <tbody>
+                        <!-- Fila 1: Nevera Haceb Inverter -->
+                        <tr>
+                            <td>
+                                <strong>Nevera Haceb No Frost Inverter</strong><br>
+                                <span class="text-muted small">Capacidad: 271 L · Ref. 9003543</span><br>
+                                <a href="https://www.haceb.com/nevera-haceb-no-frost-271-litros-manija-integrada-inox-inverter-9003543/p" target="_blank" rel="noopener noreferrer" class="small">Ficha Haceb oficial</a>
+                            </td>
+                            <td class="text-center">
+                                <span class="badge bg-success">23,7 kWh/mes</span><br>
+                                <span class="text-muted small">Certificación RETIQ</span>
+                            </td>
+                            <td class="small">
+                                <em>Consumo normativo certificado:</em><br>
+                                Prorrateo a 7 días:<br>
+                                <code>23,7 × (7/30) = 5,53 kWh</code>
+                            </td>
+                            <td class="text-center">24 h</td>
+                            <td class="text-center">24 h</td>
+                            <td class="text-center">168 h</td>
+                            <td class="text-center fw-bold text-success">5,53</td>
+                            <td class="text-end fw-bold">$5.310,68</td>
+                        </tr>
+
+                        <!-- Fila 2: Lavadora Samsung 19 kg -->
+                        <tr>
+                            <td>
+                                <strong>Lavadora Samsung WA19T6260BV</strong><br>
+                                <span class="text-muted small">Capacidad: 19 kg · Digital Inverter</span><br>
+                                <a href="https://www.samsung.com/co/business/washers-and-dryers/washing-machines/top-load-19kg-black-caviar-wa19t6260bv-co/" target="_blank" rel="noopener noreferrer" class="small">Ficha Samsung oficial</a>
+                            </td>
+                            <td class="text-center">
+                                <span class="badge bg-success">144 kWh/año</span><br>
+                                <span class="text-muted small">Norma de eficiencia</span>
+                            </td>
+                            <td class="small">
+                                <em>Consumo normativo certificado:</em><br>
+                                Prorrateo anual:<br>
+                                <code>144 ÷ 52 sem = 2,77 kWh</code>
+                            </td>
+                            <td class="text-center">1 h</td>
+                            <td class="text-center">1 h</td>
+                            <td class="text-center">7 h</td>
+                            <td class="text-center fw-bold text-success">2,77</td>
+                            <td class="text-end fw-bold">$2.660,14</td>
+                        </tr>
+
+                        <!-- Fila 3: Televisor LG 55" -->
+                        <tr>
+                            <td>
+                                <strong>Televisor LG 55QNED65BSA</strong><br>
+                                <span class="text-muted small">Pantalla 55" 4K Smart TV QNED</span><br>
+                                <a href="https://gscs-b2c.lge.com/open/downloadFile?fileId=gx7wWF45dVcvzBTYMig" target="_blank" rel="noopener noreferrer" class="small">Documentación LG oficial</a>
+                            </td>
+                            <td class="text-center">
+                                <span class="badge bg-primary">110 W</span><br>
+                                <span class="text-muted small">Potencia de operación</span>
+                            </td>
+                            <td class="small">
+                                <em>Potencia por horas de uso:</em><br>
+                                <code>(110 W × 8 h) / 1.000 = 0,88 kWh</code>
+                            </td>
+                            <td class="text-center">0 h</td>
+                            <td class="text-center">4 h</td>
+                            <td class="text-center">8 h</td>
+                            <td class="text-center fw-bold text-success">0,88</td>
+                            <td class="text-end fw-bold">$845,10</td>
+                        </tr>
+
+                        <!-- Fila 4: Portatil Lenovo ThinkPad L460 -->
+                        <tr>
+                            <td>
+                                <strong>Portátil Lenovo ThinkPad L460</strong><br>
+                                <span class="text-muted small">Intel Core i5 · Pantalla 14"</span><br>
+                                <a href="https://psref.lenovo.com/syspool/Sys/i_pdf/psref507EMEA.pdf" target="_blank" rel="noopener noreferrer" class="small">Ficha Lenovo PSREF oficial</a>
+                            </td>
+                            <td class="text-center">
+                                <span class="badge bg-warning text-dark">45 W / 65 W</span><br>
+                                <span class="text-muted small">Adaptador Slim Tip</span>
+                            </td>
+                            <td class="small">
+                                <em>Cota máxima adaptador 65 W:</em><br>
+                                <code>(65 W × 44 h) / 1.000 = 2,86 kWh</code><br>
+                                <span class="text-muted">(A 45 W: 1,98 kWh · Real: ~1,10 kWh)</span>
+                            </td>
+                            <td class="text-center">6 h</td>
+                            <td class="text-center">7 h</td>
+                            <td class="text-center">44 h</td>
+                            <td class="text-center fw-bold text-success">2,86</td>
+                            <td class="text-end fw-bold">$2.746,57</td>
+                        </tr>
+                    </tbody>
+
+                    <!-- tfoot: fila de totales obligatoria de la tabla semantica -->
+                    <tfoot class="table-dark">
+                        <tr>
+                            <!-- colspan="5" agrupa las primeras 5 columnas para mostrar la etiqueta del total -->
+                            <th scope="row" colspan="5" class="text-uppercase text-end">Total semanal estimado (con adaptador de 65 W):</th>
+                            <td class="text-center fw-bold">227 h</td>
+                            <td class="text-center fw-bold text-warning">12,04 kWh</td>
+                            <td class="text-end fw-bold text-warning">$11.562,49 COP</td>
+                        </tr>
+                        <tr class="table-secondary text-dark small">
+                            <th scope="row" colspan="5" class="text-uppercase text-end">Variante alternativa (con adaptador de 45 W):</th>
+                            <td class="text-center">227 h</td>
+                            <td class="text-center fw-bold">11,16 kWh</td>
+                            <td class="text-end fw-bold">$10.717,39 COP</td>
+                        </tr>
+                    </tfoot>
+                </table>
+            </div>
+
+            <!-- Aclaraciones tecnicas detalladas requeridas por la guia academica sobre las limitaciones de cada calculo -->
+            <div class="row g-3 mt-2">
+                <div class="col-md-6">
+                    <div class="alert alert-warning h-100 mb-0">
+                        <h3 class="h6 alert-heading fw-bold">Limitaciones de las estimaciones por potencia nominal:</h3>
+                        <p class="small mb-1">
+                            <strong>Portátil Lenovo ThinkPad L460 (Lenovo PSREF):</strong> El fabricante indica adaptadores de 45 W o 65 W. Esta cifra representa la potencia eléctrica pico que la fuente puede suministrar para cargar simultáneamente la batería y operar a máxima exigencia de CPU. En uso real ofimático y con batería cargada, el portátil demanda entre <strong>20 W y 30 W</strong>. Usar 65 W en la tabla (2,86 kWh/sem) es una cota conservadora de peor escenario; a 25 W reales, el gasto semanal sería de apenas <strong>1,10 kWh</strong> ($1.056 COP).
+                        </p>
+                        <p class="small mb-0">
+                            <strong>Televisor LG QNED 55":</strong> Los 110 W corresponden al consumo nominal según ficha técnica. En el hogar, el consumo varía si se activa el brillo dinámico, el volumen de los altavoces o el modo ahorro.
+                        </p>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="alert alert-info h-100 mb-0">
+                        <h3 class="h6 alert-heading fw-bold">Limitaciones de los datos normativos certificados:</h3>
+                        <p class="small mb-1">
+                            <strong>Nevera Haceb 271 L (Ficha oficial 23,7 kWh/mes):</strong> El ensayo oficial de laboratorio se realiza a temperatura controlada y sin aperturas de puerta. En el hogar, abrir la nevera repetidamente o ingresar alimentos calientes obliga al compresor Inverter a elevar su régimen de trabajo.
+                        </p>
+                        <p class="small mb-0">
+                            <strong>Lavadora Samsung 19 kg (Ficha oficial 144 kWh/año):</strong> Los 144 kWh/año (~2,77 kWh/semana) corresponden a ciclos de prueba estandarizados en agua fría (~4 ciclos/semana). Si en el hogar se opera 1 hora diaria los 7 días de la semana, el consumo real dependerá del nivel de agua seleccionado y la temperatura del lavado.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- section: Fotografias e ilustraciones de referencia de los equipos con figure y figcaption -->
+        <!-- Cada miniatura es clickeable: al hacer clic se abre un MODAL de Bootstrap con la imagen ampliada -->
+        <section class="mb-5">
+            <h2 class="h3 text-primary border-bottom pb-2 mb-3">Galería técnica de los equipos del hogar</h2>
+            <p class="text-muted">
+                Las siguientes imágenes son ilustraciones técnicas basadas en los datos oficiales de los cuatro fabricantes (no son fotografías tomadas por el autor).
+                <strong>Haz clic en cualquier imagen para ampliarla.</strong>
+            </p>
+
+            <div class="row g-4">
+                <!-- Equipo 1: Nevera -->
+                <div class="col-md-6 col-lg-3">
+                    <div class="card h-100 shadow-sm border-0">
+                        <figure class="m-0 p-2 text-center bg-light rounded-top">
+                            <!-- data-bs-toggle y data-bs-target abren el modal con id="modalNevera" al hacer clic -->
+                            <button type="button" class="btn btn-link p-0 border-0" data-bs-toggle="modal" data-bs-target="#modalNevera" aria-label="Ampliar ilustración de la nevera Haceb">
+                                <img class="img-fluid rounded" style="cursor:zoom-in;" src="img/nevera_haceb.svg" alt="Ilustración técnica de la Nevera Haceb No Frost Inverter de 271 litros con ficha de 23,7 kWh al mes" width="300">
+                            </button>
+                            <figcaption class="card-text small text-muted p-2 text-start">
+                                <strong>Figura 1:</strong> Ficha Haceb: 23,7 kWh/mes · 5,53 kWh/sem ($5.310,68 COP).
+                                <span class="d-block text-primary small">🔍 Clic para ampliar</span>
+                            </figcaption>
+                        </figure>
+                    </div>
+                </div>
+
+                <!-- Equipo 2: Lavadora -->
+                <div class="col-md-6 col-lg-3">
+                    <div class="card h-100 shadow-sm border-0">
+                        <figure class="m-0 p-2 text-center bg-light rounded-top">
+                            <button type="button" class="btn btn-link p-0 border-0" data-bs-toggle="modal" data-bs-target="#modalLavadora" aria-label="Ampliar ilustración de la lavadora Samsung">
+                                <img class="img-fluid rounded" style="cursor:zoom-in;" src="img/lavadora_samsung.svg" alt="Ilustración técnica de la Lavadora Samsung WA19T6260BV de 19 kg con ficha oficial de 144 kWh al año" width="300">
+                            </button>
+                            <figcaption class="card-text small text-muted p-2 text-start">
+                                <strong>Figura 2:</strong> Ficha Samsung: 144 kWh/año · 2,77 kWh/sem ($2.660,14 COP).
+                                <span class="d-block text-primary small">🔍 Clic para ampliar</span>
+                            </figcaption>
+                        </figure>
+                    </div>
+                </div>
+
+                <!-- Equipo 3: Televisor -->
+                <div class="col-md-6 col-lg-3">
+                    <div class="card h-100 shadow-sm border-0">
+                        <figure class="m-0 p-2 text-center bg-light rounded-top">
+                            <button type="button" class="btn btn-link p-0 border-0" data-bs-toggle="modal" data-bs-target="#modalTelevisor" aria-label="Ampliar ilustración del televisor LG">
+                                <img class="img-fluid rounded" style="cursor:zoom-in;" src="img/televisor_lg.svg" alt="Ilustración técnica del Televisor LG 55QNED65BSA 55 pulgadas Smart TV potencia 110 W" width="300">
+                            </button>
+                            <figcaption class="card-text small text-muted p-2 text-start">
+                                <strong>Figura 3:</strong> Doc. LG: 110 W · 0,88 kWh/sem ($845,10 COP).
+                                <span class="d-block text-primary small">🔍 Clic para ampliar</span>
+                            </figcaption>
+                        </figure>
+                    </div>
+                </div>
+
+                <!-- Equipo 4: Portatil -->
+                <div class="col-md-6 col-lg-3">
+                    <div class="card h-100 shadow-sm border-0">
+                        <figure class="m-0 p-2 text-center bg-light rounded-top">
+                            <button type="button" class="btn btn-link p-0 border-0" data-bs-toggle="modal" data-bs-target="#modalPortatil" aria-label="Ampliar ilustración del portátil Lenovo ThinkPad">
+                                <img class="img-fluid rounded" style="cursor:zoom-in;" src="img/portatil_lenovo.svg" alt="Ilustración técnica del Portátil Lenovo ThinkPad L460 adaptador 45W o 65W PSREF" width="300">
+                            </button>
+                            <figcaption class="card-text small text-muted p-2 text-start">
+                                <strong>Figura 4:</strong> PSREF Lenovo: 45W / 65W · 2,86 kWh/sem ($2.746,57 COP).
+                                <span class="d-block text-primary small">🔍 Clic para ampliar</span>
+                            </figcaption>
+                        </figure>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ============================================================ -->
+            <!-- MODALES: ventanas emergentes que se abren al hacer clic      -->
+            <!-- modal: componente de Bootstrap para mostrar contenido        -->
+            <!--        en primer plano sin abrir una nueva pestaña           -->
+            <!-- ============================================================ -->
+
+            <!-- Modal 1: Nevera Haceb -->
+            <!-- aria-labelledby: conecta el dialogo con su titulo para lectores de pantalla -->
+            <div class="modal fade" id="modalNevera" tabindex="-1" aria-labelledby="modalNeveraLabel" aria-modal="true" role="dialog">
+                <div class="modal-dialog modal-lg modal-dialog-centered">
+                    <div class="modal-content">
+                        <div class="modal-header bg-primary text-white">
+                            <h2 class="modal-title h5" id="modalNeveraLabel">Figura 1 · Nevera Haceb No Frost Inverter 271 L</h2>
+                            <!-- data-bs-dismiss cierra el modal al hacer clic en la X -->
+                            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+                        </div>
+                        <div class="modal-body text-center bg-light p-4">
+                            <img class="img-fluid rounded shadow" src="img/nevera_haceb.svg" alt="Ilustración ampliada de la Nevera Haceb No Frost Inverter 271 litros con datos de consumo RETIQ 23,7 kWh al mes">
+                        </div>
+                        <div class="modal-footer text-muted small">
+                            Ficha oficial Haceb: <strong>23,7 kWh/mes</strong> (certificación RETIQ) · Consumo semanal: <strong>5,53 kWh</strong> ($5.310,68 COP) · <a href="https://www.haceb.com/nevera-haceb-no-frost-271-litros-manija-integrada-inox-inverter-9003543/p" target="_blank" rel="noopener noreferrer">Ver ficha en haceb.com</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Modal 2: Lavadora Samsung -->
+            <div class="modal fade" id="modalLavadora" tabindex="-1" aria-labelledby="modalLavadoraLabel" aria-modal="true" role="dialog">
+                <div class="modal-dialog modal-lg modal-dialog-centered">
+                    <div class="modal-content">
+                        <div class="modal-header bg-primary text-white">
+                            <h2 class="modal-title h5" id="modalLavadoraLabel">Figura 2 · Lavadora Samsung WA19T6260BV 19 kg</h2>
+                            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+                        </div>
+                        <div class="modal-body text-center bg-light p-4">
+                            <img class="img-fluid rounded shadow" src="img/lavadora_samsung.svg" alt="Ilustración ampliada de la Lavadora Samsung WA19T6260BV 19 kg con datos de consumo 144 kWh al año">
+                        </div>
+                        <div class="modal-footer text-muted small">
+                            Ficha oficial Samsung: <strong>144 kWh/año</strong> · Consumo semanal: <strong>2,77 kWh</strong> ($2.660,14 COP) · <a href="https://www.samsung.com/co/business/washers-and-dryers/washing-machines/top-load-19kg-black-caviar-wa19t6260bv-co/" target="_blank" rel="noopener noreferrer">Ver ficha en samsung.com</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Modal 3: Televisor LG -->
+            <div class="modal fade" id="modalTelevisor" tabindex="-1" aria-labelledby="modalTelevisorLabel" aria-modal="true" role="dialog">
+                <div class="modal-dialog modal-lg modal-dialog-centered">
+                    <div class="modal-content">
+                        <div class="modal-header bg-primary text-white">
+                            <h2 class="modal-title h5" id="modalTelevisorLabel">Figura 3 · Televisor LG 55QNED65BSA 55"</h2>
+                            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+                        </div>
+                        <div class="modal-body text-center bg-light p-4">
+                            <img class="img-fluid rounded shadow" src="img/televisor_lg.svg" alt="Ilustración ampliada del Televisor LG 55QNED65BSA 55 pulgadas Smart TV QNED con 110 W de potencia">
+                        </div>
+                        <div class="modal-footer text-muted small">
+                            Documentación técnica LG: <strong>110 W</strong> de potencia de operación · Consumo semanal (8 h): <strong>0,88 kWh</strong> ($845,10 COP) · <a href="https://gscs-b2c.lge.com/open/downloadFile?fileId=gx7wWF45dVcvzBTYMig" target="_blank" rel="noopener noreferrer">Ver ficha técnica LG</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Modal 4: Portátil Lenovo -->
+            <div class="modal fade" id="modalPortatil" tabindex="-1" aria-labelledby="modalPortatilLabel" aria-modal="true" role="dialog">
+                <div class="modal-dialog modal-lg modal-dialog-centered">
+                    <div class="modal-content">
+                        <div class="modal-header bg-primary text-white">
+                            <h2 class="modal-title h5" id="modalPortatilLabel">Figura 4 · Portátil Lenovo ThinkPad L460</h2>
+                            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+                        </div>
+                        <div class="modal-body text-center bg-light p-4">
+                            <img class="img-fluid rounded shadow" src="img/portatil_lenovo.svg" alt="Ilustración ampliada del Portátil Lenovo ThinkPad L460 con adaptador de 45W o 65W según PSREF">
+                        </div>
+                        <div class="modal-footer text-muted small">
+                            Ficha Lenovo PSREF: adaptador <strong>45 W o 65 W</strong> · Consumo semanal a 65 W: <strong>2,86 kWh</strong> ($2.746,57 COP) · <a href="https://psref.lenovo.com/syspool/Sys/i_pdf/psref507EMEA.pdf" target="_blank" rel="noopener noreferrer">Ver PSREF en lenovo.com</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- section: Analisis comparativo: cual equipo gasta mas? -->
+        <section class="card border-primary p-4 mb-4 shadow-sm">
+            <h2 class="h4 text-primary">¿Cuál de estos cuatro equipos tiene el mayor impacto económico?</h2>
+            <p>
+                Al analizar los cálculos corregidos con las fichas técnicas oficiales, la <strong>Nevera Haceb No Frost Inverter (5,53 kWh/semana y $5.310,68 COP)</strong> encabeza el consumo representando el <strong>45,9%</strong> del costo semanal de estos cuatro equipos, debido a su régimen continuo de 168 horas semanales.
+            </p>
+            <p>
+                En segundo lugar se sitúa el <strong>Portátil Lenovo ThinkPad L460</strong> cuando se calcula bajo la cota conservadora del adaptador de 65 W (2,86 kWh/sem y $2.746,57 COP) por sus 44 horas semanales de uso académico y laboral. No obstante, si se mide el consumo real del procesador (~25 W), el segundo lugar corresponde a la <strong>Lavadora Samsung de 19 kg (2,77 kWh/sem y $2.660,14 COP)</strong>.
+            </p>
+            <div class="alert alert-secondary mb-0">
+                <strong>Resumen comparativo mensual estimado:</strong><br>
+                Sumando las cifras mensuales directas (Nevera Haceb 23,7 kWh/mes + Lavadora Samsung prorrateada 12,0 kWh/mes + TV LG ~3,8 kWh/mes + Portátil ~12,3 kWh/mes a 65 W), los 4 equipos suman aproximadamente <strong>51,8 kWh/mes</strong> con un costo estimado de <strong>$49.740 COP/mes</strong>. En la página <a href="mi-factura.html" class="alert-link">Mi factura</a> se compara esta estimación con el consumo global real facturado (171 kWh).
+            </div>
+        </section>
+    </main>
+
+    <!-- footer: pie de pagina con creditos academicos e hipervinculos a fuentes oficiales -->
+    <footer class="mt-4 pt-3 border-top text-muted small">
+        <p class="mb-1">
+            <strong>Fuentes oficiales de especificaciones:</strong> 
+            <a href="https://www.haceb.com/nevera-haceb-no-frost-271-litros-manija-integrada-inox-inverter-9003543/p" target="_blank" rel="noopener noreferrer">Haceb</a> (Nevera 271L: 23,7 kWh/mes) | 
+            <a href="https://www.samsung.com/co/business/washers-and-dryers/washing-machines/top-load-19kg-black-caviar-wa19t6260bv-co/" target="_blank" rel="noopener noreferrer">Samsung</a> (Lavadora 19kg: 144 kWh/año) | 
+            <a href="https://gscs-b2c.lge.com/open/downloadFile?fileId=gx7wWF45dVcvzBTYMig" target="_blank" rel="noopener noreferrer">LG Electronics</a> (TV QNED 55": 110 W) | 
+            <a href="https://psref.lenovo.com/syspool/Sys/i_pdf/psref507EMEA.pdf" target="_blank" rel="noopener noreferrer">Lenovo PSREF</a> (ThinkPad L460: 45W / 65W).
+        </p>
+        <p class="mb-0">Tarifa aplicada: $960,34 COP por kWh · Actividad EA1 · Ingeniería Web I · IU Digital de Antioquia · 2026-2</p>
+    </footer>
+    <!-- Bootstrap 5.3.3 JS Bundle: necesario para que funcionen los modales y otros componentes interactivos -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 240" width="100%" height="100%">
+  <defs>
+    <linearGradient id="facturaBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff" />
+      <stop offset="100%" stop-color="#f8fafc" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Contorno de factura -->
+  <rect x="20" y="10" width="460" height="220" rx="8" fill="url(#facturaBg)" stroke="#94a3b8" stroke-width="2" stroke-dasharray="6,4" />
+  
+  <!-- Icono de documento / factura -->
+  <g transform="translate(45, 35)">
+    <rect x="0" y="0" width="60" height="80" rx="4" fill="#e2e8f0" stroke="#64748b" stroke-width="2" />
+    <line x1="12" y1="20" x2="48" y2="20" stroke="#94a3b8" stroke-width="3" stroke-linecap="round" />
+    <line x1="12" y1="35" x2="48" y2="35" stroke="#94a3b8" stroke-width="3" stroke-linecap="round" />
+    <line x1="12" y1="50" x2="35" y2="50" stroke="#94a3b8" stroke-width="3" stroke-linecap="round" />
+    <circle cx="45" cy="65" r="5" fill="#0284c7" />
+  </g>
+  
+  <!-- Textos explicativos -->
+  <text x="135" y="55" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#1e293b">Factura de Servicio de Energía Eléctrica</text>
+  <text x="135" y="78" font-family="Arial, sans-serif" font-size="12" fill="#64748b">Espacio reservado para fotografía de factura física o digital</text>
+  
+  <!-- Resumen de datos validados -->
+  <rect x="135" y="95" width="320" height="70" rx="6" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1" />
+  <text x="150" y="118" font-family="Arial, sans-serif" font-size="11" fill="#334155"><strong>Consumo facturado:</strong> 171 kWh</text>
+  <text x="150" y="135" font-family="Arial, sans-serif" font-size="11" fill="#334155"><strong>Tarifa unitaria:</strong> $960,34 COP / kWh</text>
+  <text x="150" y="152" font-family="Arial, sans-serif" font-size="11" fill="#166534"><strong>Subsidio aplicado:</strong> -$18.726,63 COP</text>
+  <text x="320" y="138" font-family="Arial, sans-serif" font-size="13" font-weight="bold" fill="#0284c7">Total pagado:</text>
+  <text x="320" y="156" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#0f172a">$145.491,51</text>
+  
+  <!-- Aviso de privacidad -->
+  <text x="250" y="200" font-family="Arial, sans-serif" font-size="10" fill="#94a3b8" text-anchor="middle">
+    Protección de datos: No se muestran nombres, cédula ni dirección del suscriptor.
+  </text>
+</svg>

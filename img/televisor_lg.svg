@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" width="100%" height="100%">
+  <defs>
+    <linearGradient id="tvScreen" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#090d16" />
+      <stop offset="50%" stop-color="#1e1b4b" />
+      <stop offset="100%" stop-color="#0f172a" />
+    </linearGradient>
+    <linearGradient id="qnedGlow" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f43f5e" />
+      <stop offset="50%" stop-color="#a855f7" />
+      <stop offset="100%" stop-color="#3b82f6" />
+    </linearGradient>
+  </defs>
+
+  <!-- Fondo -->
+  <rect x="0" y="0" width="400" height="300" fill="#f8fafc" rx="12" />
+
+  <!-- Televisor LG 55" -->
+  <g transform="translate(60, 45)">
+    <!-- Base / Patas en V -->
+    <polygon points="40,165 30,195 45,195 48,165" fill="#334155" />
+    <polygon points="240,165 235,195 250,195 242,165" fill="#334155" />
+
+    <!-- Marco exterior delgado -->
+    <rect x="10" y="10" width="260" height="155" fill="#0f172a" rx="4" stroke="#475569" stroke-width="2" />
+
+    <!-- Pantalla -->
+    <rect x="15" y="15" width="250" height="145" fill="url(#tvScreen)" rx="2" />
+
+    <!-- Efecto visual Quantum Dot / NanoCell en pantalla -->
+    <circle cx="140" cy="85" r="45" fill="url(#qnedGlow)" opacity="0.35" filter="blur(2px)" />
+    <text x="140" y="80" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#ffffff" text-anchor="middle" letter-spacing="2">LG QNED</text>
+    <text x="140" y="98" font-family="Arial, sans-serif" font-size="9" fill="#93c5fd" text-anchor="middle">55 Pulgadas · 4K Smart TV</text>
+
+    <!-- Bisel inferior y logotipo LG -->
+    <rect x="10" y="162" width="260" height="4" fill="#1e293b" />
+    <circle cx="140" cy="164" r="1.5" fill="#ef4444" />
+  </g>
+
+  <!-- Ficha informativa Izquierda -->
+  <rect x="15" y="25" width="95" height="60" rx="6" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5" />
+  <text x="62" y="42" font-family="Arial, sans-serif" font-size="8.5" font-weight="bold" fill="#0f172a" text-anchor="middle">Potencia</text>
+  <text x="62" y="58" font-family="Arial, sans-serif" font-size="8" fill="#0284c7" text-anchor="middle" font-weight="bold">110 W (promedio)</text>
+  <text x="62" y="72" font-family="Arial, sans-serif" font-size="7" fill="#64748b" text-anchor="middle">Standby: &lt; 0,5 W</text>
+
+  <!-- Ficha informativa Derecha -->
+  <rect x="290" y="25" width="95" height="60" rx="6" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5" />
+  <text x="337" y="42" font-family="Arial, sans-serif" font-size="8.5" font-weight="bold" fill="#0f172a" text-anchor="middle">Uso Semanal</text>
+  <text x="337" y="58" font-family="Arial, sans-serif" font-size="7.5" fill="#334155" text-anchor="middle">Lun-Vie: 0 h | Fin: 8 h</text>
+  <text x="337" y="72" font-family="Arial, sans-serif" font-size="7.5" fill="#16a34a" text-anchor="middle" font-weight="bold">0,88 kWh / sem</text>
+
+  <!-- Pie de ilustración -->
+  <rect x="15" y="260" width="370" height="26" rx="4" fill="#e2e8f0" />
+  <text x="200" y="277" font-family="Arial, sans-serif" font-size="9" fill="#334155" text-anchor="middle">
+    Ilustración técnica referencial · Televisor LG 55QNED65BSA 55"
+  </text>
+</svg>
